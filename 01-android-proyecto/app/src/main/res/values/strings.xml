@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">Proyecto</string>
+    <string name="app_name">App Perritos</string>
+    <string name="login">Login</string>
+    <string name="username">Nombre de usuario</string>
+    <string name="password">Password</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="perros">Perros</string>
+    <string name="tiendas">Tiendas de mascotas</string>
+    <string name="razas">Razas de perro</string>
+    <string name="cliente">Clientes</string>
+    <string name="usuarios">Usuarios</string>
+    <string name="opcion">Seleccione una opción</string>
+    <string name="ingresar_usuario">Ingresar usuario</string>
+    <string name="gestionar_usuario">Gestionar usuarios</string>
+    <string name="tipo_usuario">Tipo de usuario</string>
+    <string name="ins_registrar_usuario">Ingrese los datos del usuario a registrar</string>
 </resources>
