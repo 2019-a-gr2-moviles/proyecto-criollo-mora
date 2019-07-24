@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="200dp" android:orientation="vertical" android:id="@+id/linear_layout_usuario">
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:text="@string/id"
+                android:layout_width="70dp"
+                android:layout_height="match_parent" android:id="@+id/textView15" android:layout_weight="1"
+                android:textSize="18sp"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/txt_id_usuario_ly" android:layout_weight="1"
+                android:textSize="18sp"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:text="@string/username"
+                android:layout_width="69dp"
+                android:layout_height="match_parent" android:id="@+id/textView16" android:layout_weight="1"
+                android:textSize="18sp"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/txt_username_ly" android:layout_weight="1"
+                android:textSize="18sp"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:text="@string/tipo_usuario"
+                android:layout_width="78dp"
+                android:layout_height="match_parent" android:id="@+id/textView19" android:layout_weight="1"
+                android:textSize="18sp"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/txt_tipo_usuario_ly" android:layout_weight="1"
+                android:textSize="18sp"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+        <Button
+                android:text="@string/modificar_usuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/btn_modificar_usuario" android:layout_weight="1"
+                android:textColor="@color/colorTextoButton" android:background="@color/colorButton"/>
+        <Button
+                android:text="@string/eliminar_usuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/btn_eliminar_usuario" android:layout_weight="1"
+                android:textColor="@color/colorTextoButton" android:background="@color/colorButton"/>
+    </LinearLayout>
+</LinearLayout>

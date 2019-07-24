@@ -11,11 +11,11 @@ class OpcionesUsuariosActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_opciones_usuarios)
 
-        btn_ingresar.setOnClickListener {
+        btn_ingresar_usuario.setOnClickListener {
             irAIngresarUsuario()
         }
 
-        btn_gestionar.setOnClickListener {
+        btn_gestionar_usuario.setOnClickListener {
             irAGestionarUsuario()
         }
     }

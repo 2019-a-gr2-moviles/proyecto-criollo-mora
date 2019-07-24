@@ -14,12 +14,24 @@ class MenuPrincipalActivity : AppCompatActivity() {
         btn_usuarios.setOnClickListener {
             irAUsuario()
         }
+
+        btn_personas.setOnClickListener {
+            irAUsuario()
+        }
     }
 
     fun irAUsuario(){
         val intentExplicito = Intent(
             this,
             OpcionesUsuariosActivity::class.java
+        )
+        startActivity(intentExplicito)
+    }
+
+    fun irAPersona(){
+        val intentExplicito = Intent(
+            this,
+            OpcionesPersonaActivity::class.java
         )
         startActivity(intentExplicito)
     }

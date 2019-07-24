@@ -1,17 +1,35 @@
 <resources>
     <string name="app_name">App Perritos</string>
     <string name="login">Login</string>
+    <string name="id">Id</string>
     <string name="username">Nombre de usuario</string>
     <string name="password">Password</string>
     <string name="ingresar">Ingresar</string>
+    <string name="opcion">Seleccione una opción</string>
+
     <string name="perros">Perros</string>
     <string name="tiendas">Tiendas de mascotas</string>
     <string name="razas">Razas de perro</string>
-    <string name="cliente">Clientes</string>
+    <string name="cliente">Personas</string>
     <string name="usuarios">Usuarios</string>
-    <string name="opcion">Seleccione una opción</string>
-    <string name="ingresar_usuario">Ingresar usuario</string>
+
+    <string name="ingresar_usuario">Registrar usuario</string>
+    <string name="modificar_usuario">Modificar usuario</string>
+    <string name="eliminar_usuario">Eliminar usuario</string>
     <string name="gestionar_usuario">Gestionar usuarios</string>
     <string name="tipo_usuario">Tipo de usuario</string>
     <string name="ins_registrar_usuario">Ingrese los datos del usuario a registrar</string>
+    <string name="ins_modificar_usuario">Ingrese los datos del usuario a modificar</string>
+
+    <string name="ingresar_persona">Registrar persona</string>
+    <string name="modificar_persona">Modificar persona</string>
+    <string name="eliminar_persona">Eliminar persona</string>
+    <string name="gestionar_persona">Gestionar personas</string>
+    <string name="ins_registrar_persona">Ingrese los datos de la persona a registrar</string>
+    <string name="ins_modificar_persona">Ingrese los datos de la persona a modificar</string>
+    <string name="cedula_persona">Número de cédula</string>
+    <string name="nombre_persona">Nombre</string>
+    <string name="apellido_persona">Apellido</string>
+    <string name="fecha_nac_persona">Fecha de nacimiento</string>
+
 </resources>

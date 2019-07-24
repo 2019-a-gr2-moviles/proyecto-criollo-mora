@@ -12,31 +12,31 @@ import com.beust.klaxon.Klaxon
 import com.github.kittinunf.fuel.httpDelete
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.result.Result
-import kotlinx.android.synthetic.main.activity_gestionar_usuario.*
+import kotlinx.android.synthetic.main.activity_gestionar_persona.*
 import java.lang.Exception
 
-class GestionarUsuarioActivity : AppCompatActivity() {
+class GestionarPersonaActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gestionar_usuario)
-        getUsuarios()
+        setContentView(R.layout.activity_gestionar_persona)
+        getPersonas()
 
     }
 
-    fun iniciarRecyclerView(listaUsuarios: ArrayList<Usuario>, actividad: GestionarUsuarioActivity, recyclerView: RecyclerView) {
-        val adaptadorUsuario = AdaptadorUsuario(listaUsuarios, actividad, recyclerView)
-        rv_usuarios.adapter = adaptadorUsuario
-        rv_usuarios.itemAnimator = DefaultItemAnimator()
-        rv_usuarios.layoutManager = LinearLayoutManager(actividad)
+    fun iniciarRecyclerView(listaPersonas: ArrayList<Persona>, actividad: GestionarPersonaActivity, recyclerView: RecyclerView) {
+        val adaptadorPersona = AdaptadorPersona(listaPersonas, actividad, recyclerView)
+        rv_personas.adapter = adaptadorPersona
+        rv_personas.itemAnimator = DefaultItemAnimator()
+        rv_personas.layoutManager = LinearLayoutManager(actividad)
 
-        adaptadorUsuario.notifyDataSetChanged()
+        adaptadorPersona.notifyDataSetChanged()
     }
 
-    fun getUsuarios() {
-        val listaUsuarios: ArrayList<Usuario> = arrayListOf()
+    fun getPersonas() {
+        val listaPersonas: ArrayList<Persona> = arrayListOf()
         try {
-            val url = "http://192.168.1.2:1337/usuario"
+            val url = "http://192.168.1.2:1337/persona"
             url.httpGet()
                 .responseString { request, response, result ->
                     when (result) {
@@ -48,13 +48,13 @@ class GestionarUsuarioActivity : AppCompatActivity() {
                             val data = result.get()
                             Log.i("http", "Data: ${data}")
 
-                            val usuarios = Klaxon().parseArray<Usuario>(data)
+                            val personas = Klaxon().parseArray<Persona>(data)
 
-                            usuarios?.forEach { usuario ->
-                                listaUsuarios.add(usuario)
+                            personas?.forEach { persona ->
+                                listaPersonas.add(persona)
                             }
                             runOnUiThread {
-                                iniciarRecyclerView(listaUsuarios, this, rv_usuarios)
+                                iniciarRecyclerView(listaPersonas, this, rv_personas)
                             }
                         }
                     }
@@ -64,8 +64,8 @@ class GestionarUsuarioActivity : AppCompatActivity() {
         }
     }
 
-    fun eliminarUsuario(usuario: Usuario) {
-        val url = "http://192.168.1.2:1337/usuario" + "/${usuario.id}"
+    fun eliminarPersona(persona: Persona) {
+        val url = "http://192.168.1.2:1337/persona" + "/${persona.id}"
         url.httpDelete()
             .responseString { request, response, result ->
                 when (result) {
@@ -75,8 +75,8 @@ class GestionarUsuarioActivity : AppCompatActivity() {
                         Log.i("http", "Error: ${ex.message}")
                     }
                     is Result.Success -> {
-                        irAGestionarUsuarios()
-                        Toast.makeText(this, "Usuario eliminado", Toast.LENGTH_SHORT).show()
+                        irAGestionarPersonas()
+                        Toast.makeText(this, "Persona eliminada", Toast.LENGTH_SHORT).show()
 
 
                     }
@@ -84,24 +84,25 @@ class GestionarUsuarioActivity : AppCompatActivity() {
             }
     }
 
-    fun irAGestionarUsuarios() {
+    fun irAGestionarPersonas() {
         intent = Intent(
             this,
-            GestionarUsuarioActivity::class.java
+            GestionarPersonaActivity::class.java
         )
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
 
-    fun irAActulizarUsuario(usuario: Usuario) {
+    fun irAActulizarPersona(persona: Persona) {
         intent = Intent(
             this,
-            ActualizarUsuarioActivity::class.java
+            ActualizarPersonaActivity::class.java
         )
-        intent.putExtra("id", usuario.id as Int)
-        intent.putExtra("username", usuario.username)
-        intent.putExtra("password", usuario.password)
-        intent.putExtra("tipo", usuario.tipo)
+        intent.putExtra("id", persona.id as Int)
+        intent.putExtra("nombre", persona.nombre)
+        intent.putExtra("apellido", persona.apellido)
+        intent.putExtra("cedula", persona.cedula)
+        intent.putExtra("fecha", persona.fechaNac)
 
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)

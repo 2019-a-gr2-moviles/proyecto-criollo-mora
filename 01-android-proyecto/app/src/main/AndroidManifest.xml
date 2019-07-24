@@ -13,6 +13,16 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
+        <activity android:name=".ActualizarPersonaActivity">
+        </activity>
+        <activity android:name=".GestionarPersonaActivity">
+        </activity>
+        <activity android:name=".IngresarPersonaActivity">
+        </activity>
+        <activity android:name=".OpcionesPersonaActivity">
+        </activity>
+        <activity android:name=".ActualizarUsuarioActivity">
+        </activity>
         <activity android:name=".GestionarUsuarioActivity">
         </activity>
         <activity android:name=".IngresarUsuarioActivity">
