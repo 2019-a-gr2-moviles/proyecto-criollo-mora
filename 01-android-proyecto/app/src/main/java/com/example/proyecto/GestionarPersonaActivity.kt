@@ -66,6 +66,8 @@ class GestionarPersonaActivity : AppCompatActivity() {
 
     fun eliminarPersona(persona: Persona) {
         val url = "http://192.168.1.2:1337/persona" + "/${persona.id}"
+        Log.i("eliminar", "url: ${url}")
+
         url.httpDelete()
             .responseString { request, response, result ->
                 when (result) {

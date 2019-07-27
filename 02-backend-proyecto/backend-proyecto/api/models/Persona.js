@@ -32,7 +32,7 @@ module.exports = {
       required: true,
       minLength: 5,
       maxLength: 20,
-    }//,
+    },
 
     /*
     //  CONFIGURACION DEL HIJO
@@ -40,12 +40,12 @@ module.exports = {
       model: 'empresa', // Nombre del modelo a relacionar (papa)
       // required: true // OPCIONAL -> Siempre ingresar el FK
     },*/
-    /*
-        //Configuracion del papa
-        serviciosDeUsuario: { // Nombre atributo de la relacion
-          collection: 'servicio', //Nombre del modelo a relacionar
-          via: 'fkUsuario' //Nombre atributo FK del otro modelo
-        }*/
+
+    //Configuracion del papa
+    personaXPerro: { // Nombre atributo de la relacion
+      collection: 'perroPorPersona', //Nombre del modelo a relacionar
+      via: 'idPersonaXPerro' //Nombre atributo FK del otro modelo
+    }
 
 
   },

@@ -43,6 +43,7 @@ class ActualizarPersonaActivity : AppCompatActivity() {
 
     fun actualizarPersona(persona: Persona) {
         val url = "http://192.168.1.2:1337/persona" + "/${persona.id}"
+        Log.i("actualizar", "url: ${url}")
         val json = """
             {
             "nombre": "${persona.nombre}",
