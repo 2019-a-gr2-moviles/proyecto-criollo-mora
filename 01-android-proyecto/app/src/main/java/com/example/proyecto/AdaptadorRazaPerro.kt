@@ -8,27 +8,21 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 
-class AdaptadorPersona(
-    private val listaPersonas: ArrayList<Persona>,
-    private val contexto: GestionarPersonaActivity,
+class AdaptadorRazaPerro (
+    private val listaRazas: ArrayList<RazaPerro>,
+    private val contexto: GestionarRazaPerroActivity,
     private val recyclerView: RecyclerView
 ) :
-    RecyclerView.Adapter<AdaptadorPersona.MyViewHolder>() {
+    RecyclerView.Adapter<AdaptadorRazaPerro.MyViewHolder>() {
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var nombreTextView: TextView
-        var apellidoTextView: TextView
-        var cedulaTextView: TextView
-        var fechaNacTextView: TextView
+        var nombreRazaTextView: TextView
         var idTextView: TextView
         var eliminarButton: Button
         var modificarButton: Button
 
         init {
-            nombreTextView = view.findViewById(R.id.txt_nombre_persona_ly) as TextView
-            apellidoTextView = view.findViewById(R.id.txt_apellido_ly) as TextView
-            cedulaTextView = view.findViewById(R.id.txt_cedula_ly) as TextView
-            fechaNacTextView = view.findViewById(R.id.txt_fecha_nac_ly) as TextView
+            nombreRazaTextView = view.findViewById(R.id.txt_nombre_persona_ly) as TextView
             idTextView = view.findViewById(R.id.txt_id_persona_ly) as TextView
             eliminarButton = view.findViewById(R.id.btn_eliminar_persona) as Button
             modificarButton = view.findViewById(R.id.btn_modificar_persona) as Button
@@ -44,19 +38,18 @@ class AdaptadorPersona(
             }
 
             eliminarButton.setOnClickListener {
-                contexto.eliminarPersona(idTextView.text.toString().toInt())
+                contexto.eliminarRaza(idTextView.text.toString().toInt())
 
             }
 
             modificarButton.setOnClickListener {
-                val persona = Persona(
+                val razaPerro = RazaPerro(
                     idTextView.text.toString().toInt(),
-                    nombreTextView.text.toString(),
-                    apellidoTextView.text.toString(),
-                    cedulaTextView.text.toString(),
-                    fechaNacTextView.text.toString()
+                    nombreRazaTextView.text.toString(),
+                    null
+
                 )
-                contexto.irAActulizarPersona(persona)
+                contexto.irAActulizarRaza(razaPerro)
 
             }
         }
@@ -65,11 +58,11 @@ class AdaptadorPersona(
 
     //Esta función define el template que vamos a utilizar.
     // El template esta en la carpeta de recursos res/layout -> layout
-    override fun onCreateViewHolder(p0: ViewGroup, p1: Int): AdaptadorPersona.MyViewHolder {
+    override fun onCreateViewHolder(p0: ViewGroup, p1: Int): AdaptadorRazaPerro.MyViewHolder {
         val itemView = LayoutInflater
             .from(p0.context)
             .inflate(
-                R.layout.layout_persona,
+                R.layout.layout_raza_perro,
                 p0,
                 false
             )
@@ -78,21 +71,18 @@ class AdaptadorPersona(
 
     //Devuelve el # de items de la lista
     override fun getItemCount(): Int {
-        return listaPersonas.size
+        return listaRazas.size
     }
 
 
-    override fun onBindViewHolder(myViewHolder: AdaptadorPersona.MyViewHolder, position: Int) {
-        val persona: Persona = listaPersonas[position]
-        myViewHolder.nombreTextView.text = persona.nombre
-        myViewHolder.apellidoTextView.text = persona.apellido
-        myViewHolder.cedulaTextView.text = persona.cedula
-        myViewHolder.fechaNacTextView.text = persona.fechaNac
-        myViewHolder.idTextView.text = persona.id.toString()
+    override fun onBindViewHolder(myViewHolder: AdaptadorRazaPerro.MyViewHolder, position: Int) {
+        val razaPerro : RazaPerro = listaRazas[position]
+        myViewHolder.nombreRazaTextView.text = razaPerro.nombreRaza
+        myViewHolder.idTextView.text = razaPerro.id.toString()
 
     }
 
-    fun crearPersona(id: Int,
+    /*fun crearPersona(id: Int,
                      nombre: String,
                      apellido: String,
                      cedula: String,
@@ -105,5 +95,5 @@ class AdaptadorPersona(
             fechaNac
         )
         return persona
-    }
+    }*/
 }

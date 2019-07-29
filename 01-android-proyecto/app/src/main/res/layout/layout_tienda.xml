@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="250dp" android:orientation="vertical">
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:text="@string/id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/textView26" android:layout_weight="1"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/txt_id_tienda_ly" android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:text="@string/nombre_tienda"
+                android:layout_width="9dp"
+                android:layout_height="match_parent" android:id="@+id/textView29" android:layout_weight="1"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/txt_nombre_tienda_ly" android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:text="@string/direccion_tienda"
+                android:layout_width="9dp"
+                android:layout_height="match_parent" android:id="@+id/textView31" android:layout_weight="1"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/txt_direccion_tienda_ly" android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:text="@string/telefono_tienda"
+                android:layout_width="17dp"
+                android:layout_height="match_parent" android:id="@+id/textView33" android:layout_weight="1"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/txt_telefono_tienda_ly" android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:text="@string/latitud_tienda"
+                android:layout_width="21dp"
+                android:layout_height="match_parent" android:id="@+id/textView35" android:layout_weight="1"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/txt_latitud_tienda_ly" android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:text="@string/longitud_tienda"
+                android:layout_width="15dp"
+                android:layout_height="wrap_content" android:id="@+id/textView37" android:layout_weight="1"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/txt_longitud_tienda_ly" android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="51dp">
+        <Button
+                android:text="@string/modificar_tienda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/btn_modificar_tienda" android:layout_weight="1"
+                android:textColor="@color/colorTextoButton" android:background="@color/colorButton"/>
+        <Button
+                android:text="@string/eliminar_tienda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/btn_eliminar_tienda" android:layout_weight="1"
+                android:background="@color/colorButton" android:textColor="@color/colorTextoButton"/>
+    </LinearLayout>
+</LinearLayout>

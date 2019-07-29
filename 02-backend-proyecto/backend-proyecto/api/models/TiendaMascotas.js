@@ -27,18 +27,26 @@ module.exports = {
       minLength: 5,
       maxLength: 20,
     },
-    fechaNac: {
-      type: 'string',
+    latitud: {
       required: true,
-      minLength: 5,
-      maxLength: 20,
+      type: 'string'
+    },
+    longitud: {
+      required: true,
+      type: 'string'
     },
 
+
     //Configuracion del papa
+    perrosXTienda: { // Nombre atributo de la relacion
+      collection: 'perro', //Nombre del modelo a relacionar
+      via: 'idTienda' //Nombre atributo FK del otro modelo
+    }
+/*
     personaXTienda: { // Nombre atributo de la relacion
       collection: 'perroPorTienda', //Nombre del modelo a relacionar
       via: 'idTiendaXPerro' //Nombre atributo FK del otro modelo
-    }
+    }*/
 
 
   },

@@ -10,6 +10,7 @@ import com.github.kittinunf.result.Result
 import kotlinx.android.synthetic.main.activity_ingresar_usuario.*
 
 class IngresarUsuarioActivity : AppCompatActivity() {
+    var url = "http://192.168.1.2:1337/usuario"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,11 +23,11 @@ class IngresarUsuarioActivity : AppCompatActivity() {
 
 
     fun registrarUsuario() {
-        val url = "http://192.168.1.2:1337/usuario"
-        val usuario = Usuario(id = null ,
-            username = txt_username_reg.text.toString(),
-            password = txt_password_reg.text.toString(),
-            tipo = txt_tipo_usuario_reg.text.toString())
+        val usuario = Usuario(null ,
+            txt_username_reg.text.toString(),
+            txt_password_reg.text.toString(),
+            txt_tipo_usuario_reg.text.toString())
+
         val parametro=listOf(
             "username" to usuario.username,
             "password" to usuario.password,
@@ -36,7 +37,7 @@ class IngresarUsuarioActivity : AppCompatActivity() {
                 is Result.Failure -> {
                     val ex = result.getException()
                     Log.i("http", "Error: ${ex.message}")
-                    Toast.makeText(this, "Error:${ex}", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, "Error:${ex}", Toast.LENGTH_SHORT).show()
                 }
                 is Result.Success -> {
                     irAGestionarUsuarios()

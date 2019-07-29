@@ -31,22 +31,17 @@ class AdaptadorUsuario (
 
             val layout = view.findViewById(R.id.linear_layout_usuario) as LinearLayout
             layout.setOnClickListener {
-                val usuario = crearUsuario(
+                /*val usuario = crearUsuario(
                     idTextView.text.toString().toInt(),
                     usernameTextView.text.toString(),
                     tipoTextView.text.toString()
                 )
-                contexto.irAActulizarUsuario(usuario)
+                contexto.irAActulizarUsuario(usuario)*/
 
             }
 
             eliminarButton.setOnClickListener {
-                val usuario = crearUsuario(
-                    idTextView.text.toString().toInt(),
-                    usernameTextView.text.toString(),
-                    tipoTextView.text.toString()
-                )
-                contexto.eliminarUsuario(usuario)
+                contexto.eliminarUsuario(idTextView.text.toString().toInt())
 
             }
 

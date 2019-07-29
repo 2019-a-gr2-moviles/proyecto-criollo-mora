@@ -16,6 +16,7 @@ import kotlinx.android.synthetic.main.activity_gestionar_persona.*
 import java.lang.Exception
 
 class GestionarPersonaActivity : AppCompatActivity() {
+    var url = "http://192.168.1.2:1337/persona"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +37,7 @@ class GestionarPersonaActivity : AppCompatActivity() {
     fun getPersonas() {
         val listaPersonas: ArrayList<Persona> = arrayListOf()
         try {
-            val url = "http://192.168.1.2:1337/persona"
+            //val url = "http://192.168.1.2:1337/persona"
             url.httpGet()
                 .responseString { request, response, result ->
                     when (result) {
@@ -64,8 +65,8 @@ class GestionarPersonaActivity : AppCompatActivity() {
         }
     }
 
-    fun eliminarPersona(persona: Persona) {
-        val url = "http://192.168.1.2:1337/persona" + "/${persona.id}"
+    fun eliminarPersona(idPersona: Int) {
+        val url = url+"/?id=${idPersona}"
         Log.i("eliminar", "url: ${url}")
 
         url.httpDelete()
@@ -73,7 +74,7 @@ class GestionarPersonaActivity : AppCompatActivity() {
                 when (result) {
                     is Result.Failure -> {
                         val ex = result.getException()
-                        Toast.makeText(this, "Error:${ex}", Toast.LENGTH_SHORT).show()
+                        //Toast.makeText(this, "Error:${ex}", Toast.LENGTH_SHORT).show()
                         Log.i("http", "Error: ${ex.message}")
                     }
                     is Result.Success -> {
@@ -104,7 +105,7 @@ class GestionarPersonaActivity : AppCompatActivity() {
         intent.putExtra("nombre", persona.nombre)
         intent.putExtra("apellido", persona.apellido)
         intent.putExtra("cedula", persona.cedula)
-        intent.putExtra("fecha", persona.fechaNac)
+        intent.putExtra("fechaNac", persona.fechaNac)
 
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)

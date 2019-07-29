@@ -30,10 +30,20 @@ module.exports = {
 
 
     //  CONFIGURACION DEL HIJO
-    idPerro: {  // Nombre del FK para la relacion
+    idRaza: {  // Nombre del FK para la relacion
       model: 'razaPerro', // Nombre del modelo a relacionar (papa)
       required: true // OPCIONAL -> Siempre ingresar el FK
     },
+
+    idPersona: {  // Nombre del FK para la relacion
+      model: 'persona', // Nombre del modelo a relacionar (papa)
+      //required: true // OPCIONAL -> Siempre ingresar el FK
+    },
+
+    idTienda: {  // Nombre del FK para la relacion
+      model: 'tiendaMascotas', // Nombre del modelo a relacionar (papa)
+      //required: true // OPCIONAL -> Siempre ingresar el FK
+    }/*,
 
     //Configuracion del papa
     perroXPersona: { // Nombre atributo de la relacion
@@ -47,7 +57,7 @@ module.exports = {
       via: 'idPerroXTienda' //Nombre atributo FK del otro modelo
     }
 
-
+*/
   },
 
 };

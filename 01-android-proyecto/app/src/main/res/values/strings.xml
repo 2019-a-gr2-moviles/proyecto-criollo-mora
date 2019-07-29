@@ -32,4 +32,36 @@
     <string name="apellido_persona">Apellido</string>
     <string name="fecha_nac_persona">Fecha de nacimiento</string>
 
+    <string name="ingresar_raza">Registrar raza de perro</string>
+    <string name="modificar_raza">Modificar raza</string>
+    <string name="eliminar_raza">Eliminar raza</string>
+    <string name="gestionar_raza">Gestionar razas</string>
+    <string name="ins_registrar_raza">Ingrese los datos de la raza a registrar</string>
+    <string name="ins_modificar_raza">Ingrese los datos de la raza a modificar</string>
+    <string name="nombre_raza">Nombre de raza</string>
+
+    <string name="ingresar_perro">Registrar perro</string>
+    <string name="modificar_perro">Modificar perro</string>
+    <string name="eliminar_perro">Eliminar perro</string>
+    <string name="gestionar_perro">Gestionar perros</string>
+    <string name="ins_registrar_perro">Ingrese los datos del perro a registrar</string>
+    <string name="ins_modificar_perro">Ingrese los datos del perro a modificar</string>
+    <string name="sexo_perro">Sexo</string>
+    <string name="edad_perro">Edad</string>
+    <string name="color_perro">Color</string>
+    <string name="id_tienda_perro">Id tienda de mascotas</string>
+
+    <string name="ingresar_tienda">Registrar tienda de mascotas</string>
+    <string name="modificar_tienda">Modificar tienda</string>
+    <string name="eliminar_tienda">Eliminar tienda</string>
+    <string name="gestionar_tienda">Gestionar tiendas de mascotas</string>
+    <string name="ins_registrar_tienda">Ingrese los datos de la tienda de mascotas a registrar</string>
+    <string name="ins_modificar_tienda">Ingrese los datos de la tienda de mascotas a modificar</string>
+    <string name="nombre_tienda">Nombre tienda</string>
+    <string name="direccion_tienda">Direccion</string>
+    <string name="telefono_tienda">Telefono</string>
+    <string name="latitud_tienda">Latitud</string>
+    <string name="longitud_tienda">Longitud</string>
+    <string name="mapa">Ver mapa</string>
+
 </resources>

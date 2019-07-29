@@ -10,6 +10,7 @@ import com.github.kittinunf.result.Result
 import kotlinx.android.synthetic.main.activity_actualizar_usuario.*
 
 class ActualizarUsuarioActivity : AppCompatActivity() {
+    var url = "http://192.168.1.2:1337/usuario"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +26,7 @@ class ActualizarUsuarioActivity : AppCompatActivity() {
         txt_id_usuario_mod.text = id.toString()
 
         btn_modificar_usuario.setOnClickListener {
+            try {
             val usuario =
                 Usuario(
                     txt_id_usuario_mod.text.toString().toInt(),
@@ -33,13 +35,19 @@ class ActualizarUsuarioActivity : AppCompatActivity() {
                     txt_tipo_mod.text.toString()
                 )
             actualizarUsuario(usuario)
+            }
+            catch (ex: Exception) {
+                Log.i("http", "Error: ${ex.message}")
+                //Toast.makeText(this, "Error:${ex}", Toast.LENGTH_SHORT).show()
+            }
 
         }
 
     }
 
     fun actualizarUsuario(usuario: Usuario) {
-        val url = "http://192.168.1.2:1337/usuario" + "/${usuario.id}"
+        val url = url + "/${usuario.id}"
+        try {
         val json = """
             {
             "username": "${usuario.username}",
@@ -62,6 +70,11 @@ class ActualizarUsuarioActivity : AppCompatActivity() {
                     }
                 }
             }
+        }
+        catch (ex: Exception) {
+            Log.i("http", "Error: ${ex.message}")
+            //Toast.makeText(this, "Error:${ex}", Toast.LENGTH_SHORT).show()
+        }
     }
 
     fun irAGestionarUsuarios() {

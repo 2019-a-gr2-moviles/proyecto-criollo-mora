@@ -13,6 +13,30 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
+        <activity android:name=".ActualizarTiendaActivity">
+        </activity>
+        <activity android:name=".GestionarTiendaActivity">
+        </activity>
+        <activity android:name=".IngresarTiendaActivity">
+        </activity>
+        <activity android:name=".OpcionesTiendaMascotasActivity">
+        </activity>
+        <activity android:name=".ActualizarPerroActivity">
+        </activity>
+        <activity android:name=".GestionarPerroActivity">
+        </activity>
+        <activity android:name=".IngresarPerroActivity">
+        </activity>
+        <activity android:name=".OpcionesPerroActivity">
+        </activity>
+        <activity android:name=".ActualizarRazaPerroActivity">
+        </activity>
+        <activity android:name=".GestionarRazaPerroActivity">
+        </activity>
+        <activity android:name=".IngresarRazaPerroActivity">
+        </activity>
+        <activity android:name=".OpcionesRazaPerroActivity">
+        </activity>
         <activity android:name=".ActualizarPersonaActivity">
         </activity>
         <activity android:name=".GestionarPersonaActivity">

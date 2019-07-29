@@ -12,32 +12,32 @@ import com.beust.klaxon.Klaxon
 import com.github.kittinunf.fuel.httpDelete
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.result.Result
-import kotlinx.android.synthetic.main.activity_gestionar_usuario.*
+import kotlinx.android.synthetic.main.activity_gestionar_raza_perro.*
 import java.lang.Exception
 
-class GestionarUsuarioActivity : AppCompatActivity() {
-    var url = "http://192.168.1.2:1337/usuario"
+class GestionarRazaPerroActivity : AppCompatActivity() {
+    var url = "http://192.168.1.2:1337/razaPerro"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gestionar_usuario)
-        getUsuarios()
+        setContentView(R.layout.activity_gestionar_raza_perro)
+        getRazas()
 
     }
 
-    fun iniciarRecyclerView(listaUsuarios: ArrayList<Usuario>, actividad: GestionarUsuarioActivity, recyclerView: RecyclerView) {
-        val adaptadorUsuario = AdaptadorUsuario(listaUsuarios, actividad, recyclerView)
-        rv_usuarios.adapter = adaptadorUsuario
-        rv_usuarios.itemAnimator = DefaultItemAnimator()
-        rv_usuarios.layoutManager = LinearLayoutManager(actividad)
+    fun iniciarRecyclerView(listaRazas: ArrayList<RazaPerro>, actividad: GestionarRazaPerroActivity, recyclerView: RecyclerView) {
+        val adaptadorRazaPerro = AdaptadorRazaPerro(listaRazas, actividad, recyclerView)
+        rv_razas_perro.adapter = adaptadorRazaPerro
+        rv_razas_perro.itemAnimator = DefaultItemAnimator()
+        rv_razas_perro.layoutManager = LinearLayoutManager(actividad)
 
-        adaptadorUsuario.notifyDataSetChanged()
+        adaptadorRazaPerro.notifyDataSetChanged()
     }
 
-    fun getUsuarios() {
-        val listaUsuarios: ArrayList<Usuario> = arrayListOf()
+    fun getRazas() {
+        val listaRazas: ArrayList<RazaPerro> = arrayListOf()
         try {
-            //val url = "http://192.168.1.2:1337/usuario"
+            //val url = "http://192.168.1.2:1337/persona"
             url.httpGet()
                 .responseString { request, response, result ->
                     when (result) {
@@ -49,13 +49,13 @@ class GestionarUsuarioActivity : AppCompatActivity() {
                             val data = result.get()
                             Log.i("http", "Data: ${data}")
 
-                            val usuarios = Klaxon().parseArray<Usuario>(data)
+                            val razas = Klaxon().parseArray<RazaPerro>(data)
 
-                            usuarios?.forEach { usuario ->
-                                listaUsuarios.add(usuario)
+                            razas?.forEach { raza ->
+                                listaRazas.add(raza)
                             }
                             runOnUiThread {
-                                iniciarRecyclerView(listaUsuarios, this, rv_usuarios)
+                                iniciarRecyclerView(listaRazas, this, rv_razas_perro)
                             }
                         }
                     }
@@ -65,8 +65,10 @@ class GestionarUsuarioActivity : AppCompatActivity() {
         }
     }
 
-    fun eliminarUsuario(idUsuario: Int) {
-        val url = url+ "/?id=${idUsuario}"
+    fun eliminarRaza(idRaza: Int) {
+        val url = url+"/?id=${idRaza}"
+        Log.i("eliminar", "url: ${url}")
+
         url.httpDelete()
             .responseString { request, response, result ->
                 when (result) {
@@ -76,8 +78,8 @@ class GestionarUsuarioActivity : AppCompatActivity() {
                         Log.i("http", "Error: ${ex.message}")
                     }
                     is Result.Success -> {
-                        irAGestionarUsuarios()
-                        Toast.makeText(this, "Usuario eliminado", Toast.LENGTH_SHORT).show()
+                        irAGestionarRazas()
+                        Toast.makeText(this, "Raza de perro eliminada", Toast.LENGTH_SHORT).show()
 
 
                     }
@@ -85,24 +87,22 @@ class GestionarUsuarioActivity : AppCompatActivity() {
             }
     }
 
-    fun irAGestionarUsuarios() {
+    fun irAGestionarRazas() {
         intent = Intent(
             this,
-            GestionarUsuarioActivity::class.java
+            GestionarRazaPerroActivity::class.java
         )
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
 
-    fun irAActulizarUsuario(usuario: Usuario) {
+    fun irAActulizarRaza(razaPerro: RazaPerro) {
         intent = Intent(
             this,
-            ActualizarUsuarioActivity::class.java
+            ActualizarRazaPerroActivity::class.java
         )
-        intent.putExtra("id", usuario.id as Int)
-        intent.putExtra("username", usuario.username)
-        intent.putExtra("password", usuario.password)
-        intent.putExtra("tipo", usuario.tipo)
+        intent.putExtra("id", razaPerro.id as Int)
+        intent.putExtra("nombreRaza", razaPerro.nombreRaza)
 
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)

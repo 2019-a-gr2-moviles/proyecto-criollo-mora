@@ -2,9 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f4a1e9d-8336-4f67-bbe6-11d5b4d4c5b7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/ActualizarPerroActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/ActualizarRazaPerroActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/ActualizarTiendaActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/AdaptadorPerro.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/AdaptadorRazaPerro.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/AdaptadorTienda.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/GestionarPerroActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/GestionarRazaPerroActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/GestionarTiendaActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/IngresarPerroActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/IngresarRazaPerroActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/IngresarTiendaActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/OpcionesPerroActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/OpcionesRazaPerroActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/OpcionesTiendaMascotasActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/Perro.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/RazaPerro.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/TiendaMascotas.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/activity_actualizar_perro.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/activity_actualizar_raza_perro.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/activity_actualizar_tienda.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/activity_gestionar_perro.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/activity_gestionar_raza_perro.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/activity_gestionar_tienda.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/activity_ingresar_perro.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/activity_ingresar_raza_perro.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/activity_ingresar_tienda.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/activity_opciones_perro.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/activity_opciones_raza_perro.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/activity_opciones_tienda_mascotas.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/layout_perro.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/layout_raza_perro.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/layout_tienda.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../01-android-proyecto/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/ActualizarPersonaActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/ActualizarPersonaActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/ActualizarUsuarioActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/ActualizarUsuarioActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/AdaptadorPersona.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/AdaptadorPersona.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/AdaptadorUsuario.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/AdaptadorUsuario.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/GestionarPersonaActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/GestionarPersonaActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/GestionarUsuarioActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/GestionarUsuarioActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/IngresarPersonaActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/IngresarPersonaActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/IngresarUsuarioActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/IngresarUsuarioActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/MenuPrincipalActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/MenuPrincipalActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/activity_actualizar_persona.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/activity_actualizar_persona.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend-proyecto/api/models/Perro.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend-proyecto/api/models/Perro.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend-proyecto/api/models/Persona.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend-proyecto/api/models/Persona.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend-proyecto/api/models/RazaPerro.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend-proyecto/api/models/RazaPerro.js" afterDir="false" />
@@ -21,20 +66,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/Usuario.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-556">
+            <state relative-caret-position="-288">
               <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/Persona.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+            <state relative-caret-position="143">
+              <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -42,8 +87,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/PerroPorPersona.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-24">
-              <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+            <state relative-caret-position="264">
+              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -51,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/RazaPerro.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+            <state relative-caret-position="72">
+              <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -60,8 +105,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/Perro.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
+            <state relative-caret-position="120">
+              <caret line="32" column="10" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -69,8 +114,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/PerroPorTienda.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="24">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -78,8 +123,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/TiendaMascotas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="39" column="64" lean-forward="true" selection-start-line="39" selection-start-column="64" selection-end-line="39" selection-end-column="64" />
+            <state relative-caret-position="119">
+              <caret line="41" column="59" lean-forward="true" selection-start-line="41" selection-start-column="59" selection-end-line="41" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -93,12 +138,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/backend-proyecto/api/models/Usuario.js" />
-        <option value="$PROJECT_DIR$/backend-proyecto/api/models/RazaPerro.js" />
         <option value="$PROJECT_DIR$/backend-proyecto/api/models/PerroPorPersona.js" />
-        <option value="$PROJECT_DIR$/backend-proyecto/api/models/Persona.js" />
-        <option value="$PROJECT_DIR$/backend-proyecto/api/models/Perro.js" />
         <option value="$PROJECT_DIR$/backend-proyecto/api/models/PerroPorTienda.js" />
+        <option value="$PROJECT_DIR$/backend-proyecto/api/models/Perro.js" />
+        <option value="$PROJECT_DIR$/backend-proyecto/api/models/Persona.js" />
         <option value="$PROJECT_DIR$/backend-proyecto/api/models/TiendaMascotas.js" />
+        <option value="$PROJECT_DIR$/backend-proyecto/api/models/RazaPerro.js" />
       </list>
     </option>
   </component>
@@ -121,7 +166,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -151,6 +195,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -190,16 +235,18 @@
       <workItem from="1563741955269" duration="4238000" />
       <workItem from="1563943058692" duration="4547000" />
       <workItem from="1564113343894" duration="5640000" />
+      <workItem from="1564281536393" duration="1801000" />
+      <workItem from="1564341640028" duration="7003000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14425000" />
+    <option name="totallyTimeSpent" value="23229000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21279761" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22321428" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -211,7 +258,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32935154" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32423207" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -222,52 +269,52 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/Usuario.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-556">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/RazaPerro.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/PerroPorPersona.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-24">
-          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/TiendaMascotas.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="39" column="64" lean-forward="true" selection-start-line="39" selection-start-column="64" selection-end-line="39" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/Perro.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
+        <state relative-caret-position="264">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/PerroPorTienda.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="24">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/Perro.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="32" column="10" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/Persona.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+        <state relative-caret-position="143">
+          <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/RazaPerro.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/TiendaMascotas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="41" column="59" lean-forward="true" selection-start-line="41" selection-start-column="59" selection-end-line="41" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/Usuario.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-288">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>

@@ -7,46 +7,44 @@ import android.util.Log
 import android.widget.Toast
 import com.github.kittinunf.fuel.httpPost
 import com.github.kittinunf.result.Result
-import kotlinx.android.synthetic.main.activity_ingresar_persona.*
+import kotlinx.android.synthetic.main.activity_ingresar_raza_perro.*
 
-class IngresarPersonaActivity : AppCompatActivity() {
-    var url = "http://192.168.1.2:1337/persona"
+class IngresarRazaPerroActivity : AppCompatActivity() {
+    var url = "http://192.168.1.2:1337/razaPerro"
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ingresar_persona)
-        btn_registrar_persona.setOnClickListener {
-            registrarPersona()
+        btn_registrar_raza.setOnClickListener {
+            registrarRaza()
         }
     }
 
 
-    fun registrarPersona() {
 
-        val persona = Persona(
+    fun registrarRaza() {
+
+        val raza = RazaPerro(
             null,
-            txt_nombre_reg.text.toString(),
-            txt_apellido_reg.text.toString(),
-            txt_cedula_reg.text.toString(),
-            txt_fecha_nac_reg.text.toString())
+            txt_nombre_raza_reg.text.toString()
+            //null
+           )
 
         val parametro=listOf(
-            "cedula" to persona.cedula,
-            "nombre" to persona.nombre,
-            "apellido" to persona.apellido,
-            "fechaNac" to persona.fechaNac)
+            "nombreRaza" to raza.nombreRaza
+            )
 
         url.httpPost(parametro).responseString { request, response, result ->
             when (result) {
                 is Result.Failure -> {
                     val ex = result.getException()
                     Log.i("http", "Error: ${ex.message}")
-                    Toast.makeText(this, "Error al registrar persona", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, "Error:${ex}", Toast.LENGTH_SHORT).show()
                 }
                 is Result.Success -> {
-                    irAGestionarPersonas()
-                    Toast.makeText(this, "Persona registrada", Toast.LENGTH_SHORT).show()
+                    irAGestionarRazas()
+                    Toast.makeText(this, "Raza de perro registrada", Toast.LENGTH_SHORT).show()
 
 
                 }
@@ -54,10 +52,10 @@ class IngresarPersonaActivity : AppCompatActivity() {
         }
     }
 
-    fun irAGestionarPersonas() {
+    fun irAGestionarRazas() {
         intent = Intent(
             this,
-            GestionarPersonaActivity::class.java
+            GestionarRazaPerroActivity::class.java
         )
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)

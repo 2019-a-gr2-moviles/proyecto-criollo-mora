@@ -12,32 +12,31 @@ import com.beust.klaxon.Klaxon
 import com.github.kittinunf.fuel.httpDelete
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.result.Result
-import kotlinx.android.synthetic.main.activity_gestionar_usuario.*
+import kotlinx.android.synthetic.main.activity_gestionar_tienda.*
 import java.lang.Exception
 
-class GestionarUsuarioActivity : AppCompatActivity() {
-    var url = "http://192.168.1.2:1337/usuario"
+class GestionarTiendaActivity : AppCompatActivity() {
+    var url = "http://192.168.1.2:1337/tiendaMascotas"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gestionar_usuario)
-        getUsuarios()
-
+        setContentView(R.layout.activity_gestionar_tienda)
+        getTiendas()
     }
 
-    fun iniciarRecyclerView(listaUsuarios: ArrayList<Usuario>, actividad: GestionarUsuarioActivity, recyclerView: RecyclerView) {
-        val adaptadorUsuario = AdaptadorUsuario(listaUsuarios, actividad, recyclerView)
-        rv_usuarios.adapter = adaptadorUsuario
-        rv_usuarios.itemAnimator = DefaultItemAnimator()
-        rv_usuarios.layoutManager = LinearLayoutManager(actividad)
+    fun iniciarRecyclerView(listaTiendas: ArrayList<TiendaMascotas>, actividad: GestionarTiendaActivity, recyclerView: RecyclerView) {
+        val adaptadorTienda = AdaptadorTienda(listaTiendas, actividad, recyclerView)
+        rv_tiendas.adapter = adaptadorTienda
+        rv_tiendas.itemAnimator = DefaultItemAnimator()
+        rv_tiendas.layoutManager = LinearLayoutManager(actividad)
 
-        adaptadorUsuario.notifyDataSetChanged()
+        adaptadorTienda.notifyDataSetChanged()
     }
 
-    fun getUsuarios() {
-        val listaUsuarios: ArrayList<Usuario> = arrayListOf()
+    fun getTiendas() {
+        val listaTiendas: ArrayList<TiendaMascotas> = arrayListOf()
         try {
-            //val url = "http://192.168.1.2:1337/usuario"
+            //val url = "http://192.168.1.2:1337/persona"
             url.httpGet()
                 .responseString { request, response, result ->
                     when (result) {
@@ -49,13 +48,13 @@ class GestionarUsuarioActivity : AppCompatActivity() {
                             val data = result.get()
                             Log.i("http", "Data: ${data}")
 
-                            val usuarios = Klaxon().parseArray<Usuario>(data)
+                            val tiendas = Klaxon().parseArray<TiendaMascotas>(data)
 
-                            usuarios?.forEach { usuario ->
-                                listaUsuarios.add(usuario)
+                            tiendas?.forEach { tienda ->
+                                listaTiendas.add(tienda)
                             }
                             runOnUiThread {
-                                iniciarRecyclerView(listaUsuarios, this, rv_usuarios)
+                                iniciarRecyclerView(listaTiendas, this, rv_tiendas)
                             }
                         }
                     }
@@ -65,8 +64,10 @@ class GestionarUsuarioActivity : AppCompatActivity() {
         }
     }
 
-    fun eliminarUsuario(idUsuario: Int) {
-        val url = url+ "/?id=${idUsuario}"
+    fun eliminarTienda(idTienda: Int) {
+        val url = url+"/?id=${idTienda}"
+        Log.i("eliminar", "url: ${url}")
+
         url.httpDelete()
             .responseString { request, response, result ->
                 when (result) {
@@ -76,8 +77,8 @@ class GestionarUsuarioActivity : AppCompatActivity() {
                         Log.i("http", "Error: ${ex.message}")
                     }
                     is Result.Success -> {
-                        irAGestionarUsuarios()
-                        Toast.makeText(this, "Usuario eliminado", Toast.LENGTH_SHORT).show()
+                        irAGestionarTiendas()
+                        Toast.makeText(this, "Tienda eliminada", Toast.LENGTH_SHORT).show()
 
 
                     }
@@ -85,24 +86,26 @@ class GestionarUsuarioActivity : AppCompatActivity() {
             }
     }
 
-    fun irAGestionarUsuarios() {
+    fun irAGestionarTiendas() {
         intent = Intent(
             this,
-            GestionarUsuarioActivity::class.java
+            GestionarTiendaActivity::class.java
         )
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
 
-    fun irAActulizarUsuario(usuario: Usuario) {
+    fun irAActulizarTienda(tiendaMascotas: TiendaMascotas) {
         intent = Intent(
             this,
-            ActualizarUsuarioActivity::class.java
+            ActualizarPersonaActivity::class.java
         )
-        intent.putExtra("id", usuario.id as Int)
-        intent.putExtra("username", usuario.username)
-        intent.putExtra("password", usuario.password)
-        intent.putExtra("tipo", usuario.tipo)
+        intent.putExtra("id", tiendaMascotas.id as Int)
+        intent.putExtra("nombre", tiendaMascotas.nombre)
+        intent.putExtra("direccion", tiendaMascotas.direccion)
+        intent.putExtra("telefono", tiendaMascotas.telefono)
+        intent.putExtra("latitud", tiendaMascotas.latitud)
+        intent.putExtra("longitud", tiendaMascotas.longitud)
 
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)

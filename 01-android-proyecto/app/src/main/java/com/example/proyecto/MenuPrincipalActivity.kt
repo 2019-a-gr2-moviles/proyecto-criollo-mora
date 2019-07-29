@@ -16,7 +16,19 @@ class MenuPrincipalActivity : AppCompatActivity() {
         }
 
         btn_personas.setOnClickListener {
-            irAUsuario()
+            irAPersona()
+        }
+
+        btn_razas.setOnClickListener {
+            irARaza()
+        }
+
+        btn_perros.setOnClickListener {
+            irAPerros()
+        }
+
+        btn_tiendas.setOnClickListener {
+            irATiendas()
         }
     }
 
@@ -32,6 +44,30 @@ class MenuPrincipalActivity : AppCompatActivity() {
         val intentExplicito = Intent(
             this,
             OpcionesPersonaActivity::class.java
+        )
+        startActivity(intentExplicito)
+    }
+
+    fun irARaza(){
+        val intentExplicito = Intent(
+            this,
+            OpcionesRazaPerroActivity::class.java
+        )
+        startActivity(intentExplicito)
+    }
+
+    fun irAPerros(){
+        val intentExplicito = Intent(
+            this,
+            OpcionesPerroActivity::class.java
+        )
+        startActivity(intentExplicito)
+    }
+
+    fun irATiendas(){
+        val intentExplicito = Intent(
+            this,
+            OpcionesTiendaMascotasActivity::class.java
         )
         startActivity(intentExplicito)
     }
