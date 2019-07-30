@@ -1,11 +1,11 @@
 package com.example.proyecto
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
 import android.widget.Toast
 import com.beust.klaxon.Klaxon
@@ -25,11 +25,11 @@ class GestionarPersonaActivity : AppCompatActivity() {
 
     }
 
-    fun iniciarRecyclerView(listaPersonas: ArrayList<Persona>, actividad: GestionarPersonaActivity, recyclerView: RecyclerView) {
+    fun iniciarRecyclerView(listaPersonas: ArrayList<Persona>, actividad: GestionarPersonaActivity, recyclerView: androidx.recyclerview.widget.RecyclerView) {
         val adaptadorPersona = AdaptadorPersona(listaPersonas, actividad, recyclerView)
         rv_personas.adapter = adaptadorPersona
-        rv_personas.itemAnimator = DefaultItemAnimator()
-        rv_personas.layoutManager = LinearLayoutManager(actividad)
+        rv_personas.itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
+        rv_personas.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(actividad)
 
         adaptadorPersona.notifyDataSetChanged()
     }

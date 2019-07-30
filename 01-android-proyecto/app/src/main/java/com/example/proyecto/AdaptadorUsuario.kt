@@ -1,6 +1,6 @@
 package com.example.proyecto
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,20 +11,18 @@ import android.widget.TextView
 class AdaptadorUsuario (
     private val listaUsuarios: ArrayList<Usuario>,
     private val contexto: GestionarUsuarioActivity,
-    private val recyclerView: RecyclerView
+    private val recyclerView: androidx.recyclerview.widget.RecyclerView
 ) :
-    RecyclerView.Adapter<AdaptadorUsuario.MyViewHolder>() {
+    androidx.recyclerview.widget.RecyclerView.Adapter<AdaptadorUsuario.MyViewHolder>() {
 
-    inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class MyViewHolder(view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
         var usernameTextView: TextView
-        var tipoTextView: TextView
         var idTextView: TextView
         var eliminarButton: Button
         var modificarButton: Button
 
         init {
             usernameTextView = view.findViewById(R.id.txt_username_ly) as TextView
-            tipoTextView = view.findViewById(R.id.txt_tipo_usuario_ly) as TextView
             idTextView = view.findViewById(R.id.txt_id_usuario_ly) as TextView
             eliminarButton = view.findViewById(R.id.btn_eliminar_usuario) as Button
             modificarButton = view.findViewById(R.id.btn_modificar_usuario) as Button
@@ -48,8 +46,8 @@ class AdaptadorUsuario (
             modificarButton.setOnClickListener {
                 val usuario = crearUsuario(
                     idTextView.text.toString().toInt(),
-                    usernameTextView.text.toString(),
-                    tipoTextView.text.toString()
+                    usernameTextView.text.toString()
+
                 )
                 contexto.irAActulizarUsuario(usuario)
 
@@ -79,17 +77,16 @@ class AdaptadorUsuario (
     override fun onBindViewHolder(myViewHolder: AdaptadorUsuario.MyViewHolder, position: Int) {
         val usuario: Usuario = listaUsuarios[position]
         myViewHolder.usernameTextView.text = usuario.username
-        myViewHolder.tipoTextView.text = usuario.tipo
+
         myViewHolder.idTextView.text = usuario.id.toString()
 
     }
 
-    fun crearUsuario(id: Int, username: String, tipo: String): Usuario {
+    fun crearUsuario(id: Int, username: String): Usuario {
         val usuario = Usuario(
             id,
             username,
-            null,
-            tipo
+            null
         )
         return usuario
     }

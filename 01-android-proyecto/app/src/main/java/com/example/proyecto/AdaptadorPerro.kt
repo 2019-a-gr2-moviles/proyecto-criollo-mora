@@ -1,6 +1,6 @@
 package com.example.proyecto
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -14,17 +14,17 @@ import com.github.kittinunf.result.Result
 class AdaptadorPerro (
     private val listaPerros: ArrayList<Perro>,
     private val contexto: GestionarPerroActivity,
-    private val recyclerView: RecyclerView/*,
+    private val recyclerView: androidx.recyclerview.widget.RecyclerView/*,
     private val listaPersonas: ArrayList<Persona>,
     private val listaTiendas: ArrayList<TiendaMascotas>,
     private val listaRazas: ArrayList<RazaPerro>
 */
 ) :
-    RecyclerView.Adapter<AdaptadorPerro.MyViewHolder>() {
+    androidx.recyclerview.widget.RecyclerView.Adapter<AdaptadorPerro.MyViewHolder>() {
 
 
 
-    inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class MyViewHolder(view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
 
 
         var idTextView: TextView

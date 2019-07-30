@@ -21,11 +21,11 @@ module.exports = {
       required: true,
       minLength: 5,
       maxLength: 10,
-    },
+    }/*,
     tipo: {
       type: 'string',
       enum: ['administrador', 'cliente']
-    }//,
+    },*/
 
     /*
     //  CONFIGURACION DEL HIJO

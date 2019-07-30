@@ -1,11 +1,11 @@
 package com.example.proyecto
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
 import android.widget.Toast
 import com.beust.klaxon.Klaxon
@@ -25,11 +25,11 @@ class GestionarUsuarioActivity : AppCompatActivity() {
 
     }
 
-    fun iniciarRecyclerView(listaUsuarios: ArrayList<Usuario>, actividad: GestionarUsuarioActivity, recyclerView: RecyclerView) {
+    fun iniciarRecyclerView(listaUsuarios: ArrayList<Usuario>, actividad: GestionarUsuarioActivity, recyclerView: androidx.recyclerview.widget.RecyclerView) {
         val adaptadorUsuario = AdaptadorUsuario(listaUsuarios, actividad, recyclerView)
         rv_usuarios.adapter = adaptadorUsuario
-        rv_usuarios.itemAnimator = DefaultItemAnimator()
-        rv_usuarios.layoutManager = LinearLayoutManager(actividad)
+        rv_usuarios.itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
+        rv_usuarios.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(actividad)
 
         adaptadorUsuario.notifyDataSetChanged()
     }
@@ -72,7 +72,7 @@ class GestionarUsuarioActivity : AppCompatActivity() {
                 when (result) {
                     is Result.Failure -> {
                         val ex = result.getException()
-                        //Toast.makeText(this, "Error:${ex}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Error al eliminar usuario", Toast.LENGTH_SHORT).show()
                         Log.i("http", "Error: ${ex.message}")
                     }
                     is Result.Success -> {
@@ -102,7 +102,7 @@ class GestionarUsuarioActivity : AppCompatActivity() {
         intent.putExtra("id", usuario.id as Int)
         intent.putExtra("username", usuario.username)
         intent.putExtra("password", usuario.password)
-        intent.putExtra("tipo", usuario.tipo)
+
 
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)

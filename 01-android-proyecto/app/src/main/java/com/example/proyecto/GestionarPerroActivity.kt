@@ -1,11 +1,11 @@
 package com.example.proyecto
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
 import android.widget.Toast
 import com.beust.klaxon.Klaxon
@@ -41,14 +41,14 @@ class GestionarPerroActivity : AppCompatActivity() {
 
     fun iniciarRecyclerView(listaPerros: ArrayList<Perro>,
                             actividad: GestionarPerroActivity,
-                            recyclerView: RecyclerView/*,
+                            recyclerView: androidx.recyclerview.widget.RecyclerView/*,
                             listaPersonas: ArrayList<Persona>,
                             listaTiendas: ArrayList<TiendaMascotas>,
                             listaRazas: ArrayList<RazaPerro>*/) {
         val adaptadorPerro = AdaptadorPerro(listaPerros, actividad, recyclerView)
         rv_perros.adapter = adaptadorPerro
-        rv_perros.itemAnimator = DefaultItemAnimator()
-        rv_perros.layoutManager = LinearLayoutManager(actividad)
+        rv_perros.itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
+        rv_perros.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(actividad)
 
         adaptadorPerro.notifyDataSetChanged()
     }

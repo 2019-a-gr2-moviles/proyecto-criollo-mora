@@ -1,7 +1,7 @@
 package com.example.proyecto
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -17,12 +17,12 @@ class ActualizarUsuarioActivity : AppCompatActivity() {
         setContentView(R.layout.activity_actualizar_usuario)
         val username: String? = this.intent.getStringExtra("username")
         val password: String? = this.intent.getStringExtra("password")
-        val tipo: String? = this.intent.getStringExtra("tipo")
+        //val tipo: String? = this.intent.getStringExtra("tipo")
         val id: Int? = this.intent.getIntExtra("id", -1)
 
         txt_username_mod.hint = username
-        txt_password_mod.hint = password
-        txt_tipo_mod.hint = tipo
+        //txt_password_mod.hint = password
+
         txt_id_usuario_mod.text = id.toString()
 
         btn_modificar_usuario.setOnClickListener {
@@ -31,8 +31,7 @@ class ActualizarUsuarioActivity : AppCompatActivity() {
                 Usuario(
                     txt_id_usuario_mod.text.toString().toInt(),
                     txt_username_mod.text.toString(),
-                    txt_password_mod.text.toString(),
-                    txt_tipo_mod.text.toString()
+                    txt_password_mod.text.toString()
                 )
             actualizarUsuario(usuario)
             }
@@ -51,8 +50,7 @@ class ActualizarUsuarioActivity : AppCompatActivity() {
         val json = """
             {
             "username": "${usuario.username}",
-            "password": "${usuario.password}",
-            "tipo": "${usuario.tipo}"
+            "password": "${usuario.password}"
             }"""
 
         url.httpPut().body(json)

@@ -1,11 +1,11 @@
 package com.example.proyecto
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
 import android.widget.Toast
 import com.beust.klaxon.Klaxon
@@ -24,11 +24,11 @@ class GestionarTiendaActivity : AppCompatActivity() {
         getTiendas()
     }
 
-    fun iniciarRecyclerView(listaTiendas: ArrayList<TiendaMascotas>, actividad: GestionarTiendaActivity, recyclerView: RecyclerView) {
+    fun iniciarRecyclerView(listaTiendas: ArrayList<TiendaMascotas>, actividad: GestionarTiendaActivity, recyclerView: androidx.recyclerview.widget.RecyclerView) {
         val adaptadorTienda = AdaptadorTienda(listaTiendas, actividad, recyclerView)
         rv_tiendas.adapter = adaptadorTienda
-        rv_tiendas.itemAnimator = DefaultItemAnimator()
-        rv_tiendas.layoutManager = LinearLayoutManager(actividad)
+        rv_tiendas.itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
+        rv_tiendas.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(actividad)
 
         adaptadorTienda.notifyDataSetChanged()
     }

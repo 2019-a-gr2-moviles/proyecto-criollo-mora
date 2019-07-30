@@ -63,5 +63,6 @@
     <string name="latitud_tienda">Latitud</string>
     <string name="longitud_tienda">Longitud</string>
     <string name="mapa">Ver mapa</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>

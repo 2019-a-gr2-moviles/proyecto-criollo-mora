@@ -1,7 +1,7 @@
 package com.example.proyecto
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_opciones_tienda_mascotas.*
 
@@ -19,7 +19,7 @@ class OpcionesTiendaMascotasActivity : AppCompatActivity() {
         }
 
         btn_mapa.setOnClickListener {
-            //irAMapa()
+            irAMapa()
         }
     }
 
@@ -39,12 +39,12 @@ class OpcionesTiendaMascotasActivity : AppCompatActivity() {
         startActivity(intentExplicito)
     }
 
-    /*fun irAMapa(){
+    fun irAMapa(){
         val intentExplicito = Intent(
             this,
             MapsActivity::class.java
         )
         startActivity(intentExplicito)
-    }*/
+    }
 
 }

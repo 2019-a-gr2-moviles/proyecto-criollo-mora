@@ -1,7 +1,7 @@
 package com.example.proyecto
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -21,23 +21,20 @@ class IngresarUsuarioActivity : AppCompatActivity() {
     }
 
 
-
     fun registrarUsuario() {
         val usuario = Usuario(null ,
             txt_username_reg.text.toString(),
-            txt_password_reg.text.toString(),
-            txt_tipo_usuario_reg.text.toString())
+            txt_password_reg.text.toString())
 
         val parametro=listOf(
             "username" to usuario.username,
-            "password" to usuario.password,
-            "tipo" to usuario.tipo)
+            "password" to usuario.password)
         url.httpPost(parametro).responseString { request, response, result ->
             when (result) {
                 is Result.Failure -> {
                     val ex = result.getException()
                     Log.i("http", "Error: ${ex.message}")
-                    //Toast.makeText(this, "Error:${ex}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Error al registrar usuario", Toast.LENGTH_SHORT).show()
                 }
                 is Result.Success -> {
                     irAGestionarUsuarios()

@@ -1,6 +1,6 @@
 package com.example.proyecto
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,11 +11,11 @@ import android.widget.TextView
 class AdaptadorTienda(
     private val listaTiendas: ArrayList<TiendaMascotas>,
     private val contexto: GestionarTiendaActivity,
-    private val recyclerView: RecyclerView
+    private val recyclerView: androidx.recyclerview.widget.RecyclerView
 ) :
-    RecyclerView.Adapter<AdaptadorTienda.MyViewHolder>() {
+    androidx.recyclerview.widget.RecyclerView.Adapter<AdaptadorTienda.MyViewHolder>() {
 
-    inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class MyViewHolder(view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
         var nombreTextView: TextView
         var direccionTextView: TextView
         var telefonoTextView: TextView

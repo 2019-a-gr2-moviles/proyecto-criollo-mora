@@ -1,6 +1,6 @@
 package com.example.proyecto
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,11 +11,11 @@ import android.widget.TextView
 class AdaptadorRazaPerro (
     private val listaRazas: ArrayList<RazaPerro>,
     private val contexto: GestionarRazaPerroActivity,
-    private val recyclerView: RecyclerView
+    private val recyclerView: androidx.recyclerview.widget.RecyclerView
 ) :
-    RecyclerView.Adapter<AdaptadorRazaPerro.MyViewHolder>() {
+    androidx.recyclerview.widget.RecyclerView.Adapter<AdaptadorRazaPerro.MyViewHolder>() {
 
-    inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class MyViewHolder(view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
         var nombreRazaTextView: TextView
         var idTextView: TextView
         var eliminarButton: Button
