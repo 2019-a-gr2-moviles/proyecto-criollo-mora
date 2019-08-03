@@ -27,8 +27,8 @@ class ActualizarRazaPerroActivity : AppCompatActivity() {
                 val razaPerro =
                     RazaPerro(
                         txt_id_raza_mod.text.toString().toInt(),
-                        txt_nombre_raza_mod.text.toString(),
-                        null
+                        txt_nombre_raza_mod.text.toString()
+
                     )
                 actualizarRaza(razaPerro)
             }
@@ -60,15 +60,18 @@ class ActualizarRazaPerroActivity : AppCompatActivity() {
                             Log.i("http", "Error: ${ex.message}")
                         }
                         is Result.Success -> {
-                            irAGestionarRazas()
-                            Toast.makeText(this, "Raza de perro modificada", Toast.LENGTH_SHORT).show()
+                            runOnUiThread {
+                                Toast.makeText(this, "Raza de perro modificada", Toast.LENGTH_SHORT).show()
+                                irAGestionarRazas()
+                            }
+
                         }
                     }
                 }
         }
         catch (ex: Exception) {
             Log.i("http", "Error: ${ex.message}")
-            //Toast.makeText(this, "Error:${ex}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Error al modificar raza de perro", Toast.LENGTH_SHORT).show()
         }
 
     }

@@ -44,6 +44,7 @@ class OpcionesTiendaMascotasActivity : AppCompatActivity() {
             this,
             MapsActivity::class.java
         )
+        intentExplicito.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intentExplicito)
     }
 

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
 import com.beust.klaxon.Klaxon
 import com.github.kittinunf.fuel.httpGet
@@ -62,26 +63,37 @@ class AdaptadorPerro (
             eliminarBoton = view.findViewById(R.id.btn_eliminar_perro) as Button
             actualizarBoton = view.findViewById(R.id.btn_modificar_perro) as Button
 
+            val layout = view.findViewById(R.id.linear_layout_usuario) as LinearLayout
+            layout.setOnClickListener {
+                contexto.eliminarPerro(idTextView.text.toString().toInt())
+
+            }
+
             actualizarBoton.setOnClickListener {
-                val raza = listaRazas.find { raza ->
-                    raza.nombreRaza == nombreRazaTextView.text.toString()
+                val razaPerro = listaRazas.find { razaPerro ->
+                    razaPerro.nombreRaza == nombreRazaTextView.text.toString()
                 }
 
                 val persona = listaPersonas.find { persona ->
                     persona.cedula == cedulaPersonaTextView.text.toString()
                 }
 
-                val tienda = listaTiendas.find { tienda ->
-                    tienda.id == idTiendaMascotasTextView.text.toString().toInt()
+                val tiendaMascotas = listaTiendas.find { tiendaMascotas ->
+                    tiendaMascotas.id == idTiendaMascotasTextView.text.toString().toInt()
                 }
                 val perro = Perro(
                     null,
                     sexoTextView.text.toString(),
                     edadTextView.text.toString(),
                     colorTextView.text.toString(),
-                    raza!!.id,
+                    /*razaPerro!!.id,
                     persona!!.id,
-                    tienda!!.id)
+                    tiendaMascotas!!.id*/
+                    PerrosXRaza(razaPerro!!.id, null),
+                    PerrosXPersona(persona!!.id, null, null, null, null),
+                    PerrosXTiendaMascotas(idTiendaMascotasTextView.text.toString().toInt(), null, null, null, null, null)
+
+                )
                 contexto.irAActulizarPerro(perro)
 
             }
@@ -118,7 +130,11 @@ class AdaptadorPerro (
         myViewHolder.sexoTextView.text = perro.sexo
         myViewHolder.edadTextView.text = perro.edad
         myViewHolder.colorTextView.text = perro.color
-        myViewHolder.nombreRazaTextView.text = perro.idRaza.toString()
+        //myViewHolder.nombreRazaTextView.text = perro.idRaza!!.id.toString()
+        //myViewHolder.cedulaPersonaTextView.text = perro.idPersona!!.id.toString()
+        myViewHolder.nombreRazaTextView.text = perro.idRaza!!.nombreRaza
+        myViewHolder.cedulaPersonaTextView.text = perro.idPersona!!.cedula
+        myViewHolder.idTiendaMascotasTextView.text = perro.idTienda!!.id.toString()
 
     }
 

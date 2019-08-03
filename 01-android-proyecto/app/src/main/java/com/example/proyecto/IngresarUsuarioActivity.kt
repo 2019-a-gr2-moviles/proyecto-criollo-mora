@@ -37,9 +37,10 @@ class IngresarUsuarioActivity : AppCompatActivity() {
                     Toast.makeText(this, "Error al registrar usuario", Toast.LENGTH_SHORT).show()
                 }
                 is Result.Success -> {
-                    irAGestionarUsuarios()
-                    Toast.makeText(this, "Usuario registrado", Toast.LENGTH_SHORT).show()
-
+                    runOnUiThread {
+                        Toast.makeText(this, "Usuario registrado", Toast.LENGTH_SHORT).show()
+                        irAGestionarUsuarios()
+                    }
                 }
 
             }

@@ -42,7 +42,7 @@ class ActualizarPersonaActivity : AppCompatActivity() {
             }
                 catch (ex: Exception) {
                     Log.i("http", "Error: ${ex.message}")
-                    //Toast.makeText(this, "Error:${ex}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Error al modificar persona", Toast.LENGTH_SHORT).show()
                 }
 
         }
@@ -71,15 +71,18 @@ class ActualizarPersonaActivity : AppCompatActivity() {
                         Log.i("http", "Error: ${ex.message}")
                     }
                     is Result.Success -> {
-                        irAGestionarPersonas()
-                        Toast.makeText(this, "Persona modificada", Toast.LENGTH_SHORT).show()
+                        runOnUiThread {
+                            Toast.makeText(this, "Persona modificada", Toast.LENGTH_SHORT).show()
+                            irAGestionarPersonas()
+                        }
+
                     }
                 }
             }
         }
         catch (ex: Exception) {
             Log.i("http", "Error: ${ex.message}")
-            //Toast.makeText(this, "Error:${ex}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Error al modificar persona", Toast.LENGTH_SHORT).show()
         }
 
     }

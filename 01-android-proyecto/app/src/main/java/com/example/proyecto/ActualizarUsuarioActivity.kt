@@ -61,8 +61,8 @@ class ActualizarUsuarioActivity : AppCompatActivity() {
                         Log.i("http", "Error: ${ex.message}")
                     }
                     is Result.Success -> {
-                        Toast.makeText(this, "Usuario modificado", Toast.LENGTH_SHORT).show()
                         runOnUiThread {
+                            Toast.makeText(this, "Usuario modificado", Toast.LENGTH_SHORT).show()
                             irAGestionarUsuarios()
                         }
                     }
@@ -71,7 +71,7 @@ class ActualizarUsuarioActivity : AppCompatActivity() {
         }
         catch (ex: Exception) {
             Log.i("http", "Error: ${ex.message}")
-            //Toast.makeText(this, "Error:${ex}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Error al modificar usuario", Toast.LENGTH_SHORT).show()
         }
     }
 

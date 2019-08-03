@@ -8,7 +8,7 @@
 module.exports = {
 
   attributes: {
-
+/*
 //  CONFIGURACION DEL HIJO
     idPersonaXPerro: {  // Nombre del FK para la relacion
       model: 'persona', // Nombre del modelo a relacionar (papa)
@@ -18,7 +18,7 @@ module.exports = {
     idPerroXPersona: {  // Nombre del FK para la relacion
       model: 'perro', // Nombre del modelo a relacionar (papa)
       required: true // OPCIONAL -> Siempre ingresar el FK
-    }
+    }*/
   },
 
 };

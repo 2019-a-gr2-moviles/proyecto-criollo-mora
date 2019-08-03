@@ -20,8 +20,9 @@ class GestionarUsuarioActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gestionar_usuario)
         getUsuarios()
+        setContentView(R.layout.activity_gestionar_usuario)
+
 
     }
 
@@ -66,7 +67,9 @@ class GestionarUsuarioActivity : AppCompatActivity() {
     }
 
     fun eliminarUsuario(idUsuario: Int) {
-        val url = url+ "/?id=${idUsuario}"
+        val url = url + "/${idUsuario}"
+        Log.i("eliminar", "url: ${url}")
+        getUsuarios()
         url.httpDelete()
             .responseString { request, response, result ->
                 when (result) {
@@ -76,9 +79,12 @@ class GestionarUsuarioActivity : AppCompatActivity() {
                         Log.i("http", "Error: ${ex.message}")
                     }
                     is Result.Success -> {
-                        irAGestionarUsuarios()
-                        Toast.makeText(this, "Usuario eliminado", Toast.LENGTH_SHORT).show()
+                        runOnUiThread {
+                            getUsuarios()
+                            Toast.makeText(this, "Usuario eliminado", Toast.LENGTH_SHORT).show()
+                            startActivity(this.intent)
 
+                        }
 
                     }
                 }

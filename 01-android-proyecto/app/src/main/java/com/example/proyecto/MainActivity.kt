@@ -27,14 +27,16 @@ class MainActivity : AppCompatActivity() {
     fun consultarIngreso(){
         val lstUsuario = ArrayList<Usuario>()
         val urlUsuario = url+"/usuario"
-        val usuario = Usuario(id = null ,username = txt_username_ly.text.toString(),
-            password = txt_password_reg.text.toString(), tipo = null)
+        val usuario = Usuario(null,
+            txt_username_ly.text.toString(),
+            txt_password_reg.text.toString())
+
         val parametro=listOf("username" to usuario.username, "password" to usuario.password)
         urlUsuario.httpGet(parametro).responseString { request, response, result ->
             when(result){
                 is Result.Failure ->{
-                    val exc = result.getException()
-                    Toast.makeText(this, "Error:${exc}", Toast.LENGTH_SHORT).show()
+                    val ex = result.getException()
+                    Toast.makeText(this, "Error al iniciar sesion", Toast.LENGTH_SHORT).show()
                 }
                 is Result.Success -> {
                     val resultado = result.get()

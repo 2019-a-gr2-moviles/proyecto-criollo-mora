@@ -45,8 +45,11 @@ class IngresarTiendaActivity : AppCompatActivity() {
                     Toast.makeText(this, "Error al registrar tienda", Toast.LENGTH_SHORT).show()
                 }
                 is Result.Success -> {
-                    irAGestionarTiendas()
-                    Toast.makeText(this, "Tienda de mascotas registrada", Toast.LENGTH_SHORT).show()
+                    runOnUiThread {
+                        Toast.makeText(this, "Tienda de mascotas registrada", Toast.LENGTH_SHORT).show()
+                        irAGestionarTiendas()
+                    }
+
                 }
             }
         }

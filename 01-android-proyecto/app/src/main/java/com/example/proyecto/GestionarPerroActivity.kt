@@ -34,8 +34,9 @@ class GestionarPerroActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gestionar_perro)
         getPerros()
+        setContentView(R.layout.activity_gestionar_perro)
+
 
     }
 
@@ -179,22 +180,23 @@ class GestionarPerroActivity : AppCompatActivity() {
 
 
     fun eliminarPerro(idPerro: Int) {
-        val url = url+"/?id=${idPerro}"
+        val url = url+"/${idPerro}"
         Log.i("eliminar", "url: ${url}")
-
+        getPerros()
         url.httpDelete()
             .responseString { request, response, result ->
                 when (result) {
                     is Result.Failure -> {
                         val ex = result.getException()
-                        //Toast.makeText(this, "Error:${ex}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Error al eliminar perro", Toast.LENGTH_SHORT).show()
                         Log.i("http", "Error: ${ex.message}")
                     }
                     is Result.Success -> {
-                        irAGestionarPerros()
-                        Toast.makeText(this, "Perro eliminado", Toast.LENGTH_SHORT).show()
-
-
+                        runOnUiThread {
+                            //getPerros()
+                            Toast.makeText(this, "Perro eliminado", Toast.LENGTH_SHORT).show()
+                            startActivity(this.intent)
+                        }
                     }
                 }
             }
@@ -212,15 +214,15 @@ class GestionarPerroActivity : AppCompatActivity() {
     fun irAActulizarPerro(perro: Perro) {
         intent = Intent(
             this,
-            ActualizarPersonaActivity::class.java
+            ActualizarPerroActivity::class.java
         )
         intent.putExtra("id", perro.id as Int)
         intent.putExtra("sexo", perro.sexo)
         intent.putExtra("edad", perro.edad)
         intent.putExtra("color", perro.color)
-        intent.putExtra("idRaza", perro.idRaza as Int)
-        intent.putExtra("idPersona", perro.idPersona as Int)
-        intent.putExtra("idTienda", perro.idTienda as Int)
+        intent.putExtra("idRaza", perro.idRaza!!.id as Int)
+        intent.putExtra("idPersona", perro.idPersona!!.id as Int)
+        intent.putExtra("idTienda", perro.idTienda!!.id as Int)
 
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)

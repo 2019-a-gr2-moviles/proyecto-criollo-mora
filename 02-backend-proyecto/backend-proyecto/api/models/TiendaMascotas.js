@@ -38,7 +38,7 @@ module.exports = {
 
 
     //Configuracion del papa
-    perrosXTienda: { // Nombre atributo de la relacion
+    perrosXTienda: { // Nombre atr`ibuto de la relacion
       collection: 'perro', //Nombre del modelo a relacionar
       via: 'idTienda' //Nombre atributo FK del otro modelo
     }

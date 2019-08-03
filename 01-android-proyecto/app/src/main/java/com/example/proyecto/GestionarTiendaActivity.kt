@@ -20,8 +20,9 @@ class GestionarTiendaActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gestionar_tienda)
         getTiendas()
+        setContentView(R.layout.activity_gestionar_tienda)
+
     }
 
     fun iniciarRecyclerView(listaTiendas: ArrayList<TiendaMascotas>, actividad: GestionarTiendaActivity, recyclerView: androidx.recyclerview.widget.RecyclerView) {
@@ -50,8 +51,8 @@ class GestionarTiendaActivity : AppCompatActivity() {
 
                             val tiendas = Klaxon().parseArray<TiendaMascotas>(data)
 
-                            tiendas?.forEach { tienda ->
-                                listaTiendas.add(tienda)
+                            tiendas?.forEach { tiendaMascotas ->
+                                listaTiendas.add(tiendaMascotas)
                             }
                             runOnUiThread {
                                 iniciarRecyclerView(listaTiendas, this, rv_tiendas)
@@ -65,21 +66,24 @@ class GestionarTiendaActivity : AppCompatActivity() {
     }
 
     fun eliminarTienda(idTienda: Int) {
-        val url = url+"/?id=${idTienda}"
+        val url = url+"/${idTienda}"
         Log.i("eliminar", "url: ${url}")
+        getTiendas()
 
         url.httpDelete()
             .responseString { request, response, result ->
                 when (result) {
                     is Result.Failure -> {
                         val ex = result.getException()
-                        //Toast.makeText(this, "Error:${ex}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Error al eliminar tienda de mascotas", Toast.LENGTH_SHORT).show()
                         Log.i("http", "Error: ${ex.message}")
                     }
                     is Result.Success -> {
-                        irAGestionarTiendas()
-                        Toast.makeText(this, "Tienda eliminada", Toast.LENGTH_SHORT).show()
-
+                        runOnUiThread {
+                            getTiendas()
+                            Toast.makeText(this, "Tienda de mascotas eliminada", Toast.LENGTH_SHORT).show()
+                            startActivity(this.intent)
+                        }
 
                     }
                 }
@@ -98,7 +102,7 @@ class GestionarTiendaActivity : AppCompatActivity() {
     fun irAActulizarTienda(tiendaMascotas: TiendaMascotas) {
         intent = Intent(
             this,
-            ActualizarPersonaActivity::class.java
+            ActualizarTiendaActivity::class.java
         )
         intent.putExtra("id", tiendaMascotas.id as Int)
         intent.putExtra("nombre", tiendaMascotas.nombre)

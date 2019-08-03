@@ -20,8 +20,9 @@ class GestionarRazaPerroActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gestionar_raza_perro)
         getRazas()
+        setContentView(R.layout.activity_gestionar_raza_perro)
+
 
     }
 
@@ -51,8 +52,8 @@ class GestionarRazaPerroActivity : AppCompatActivity() {
 
                             val razas = Klaxon().parseArray<RazaPerro>(data)
 
-                            razas?.forEach { raza ->
-                                listaRazas.add(raza)
+                            razas?.forEach { razaPerro ->
+                                listaRazas.add(razaPerro)
                             }
                             runOnUiThread {
                                 iniciarRecyclerView(listaRazas, this, rv_razas_perro)
@@ -66,21 +67,24 @@ class GestionarRazaPerroActivity : AppCompatActivity() {
     }
 
     fun eliminarRaza(idRaza: Int) {
-        val url = url+"/?id=${idRaza}"
+        val url = url+"/${idRaza}"
         Log.i("eliminar", "url: ${url}")
+        getRazas()
 
         url.httpDelete()
             .responseString { request, response, result ->
                 when (result) {
                     is Result.Failure -> {
                         val ex = result.getException()
-                        //Toast.makeText(this, "Error:${ex}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Error al eliminar raza de perro", Toast.LENGTH_SHORT).show()
                         Log.i("http", "Error: ${ex.message}")
                     }
                     is Result.Success -> {
-                        irAGestionarRazas()
-                        Toast.makeText(this, "Raza de perro eliminada", Toast.LENGTH_SHORT).show()
-
+                        runOnUiThread {
+                            getRazas()
+                            Toast.makeText(this, "Raza de perro eliminada", Toast.LENGTH_SHORT).show()
+                            startActivity(this.intent)
+                        }
 
                     }
                 }

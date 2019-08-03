@@ -5,6 +5,7 @@ class TiendaMascotas(var id:Int?,
                      var direccion:String,
                      var telefono:String,
                      var latitud: String,
-                     var longitud: String
+                     var longitud: String/*,
+                     var perrosXTienda: ArrayList<Perro>?*/
 ){
 }

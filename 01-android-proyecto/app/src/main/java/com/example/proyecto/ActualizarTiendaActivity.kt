@@ -74,8 +74,10 @@ class ActualizarTiendaActivity : AppCompatActivity() {
                             Log.i("http", "Error: ${ex.message}")
                         }
                         is Result.Success -> {
-                            irAGestionarTiendas()
-                            Toast.makeText(this, "Tienda de mascotas modificada", Toast.LENGTH_SHORT).show()
+                            runOnUiThread {
+                                Toast.makeText(this, "Tienda de mascotas modificada", Toast.LENGTH_SHORT).show()
+                                irAGestionarTiendas()
+                            }
                         }
                     }
                 }

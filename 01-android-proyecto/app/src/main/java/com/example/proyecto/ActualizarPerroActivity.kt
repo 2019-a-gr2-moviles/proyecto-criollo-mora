@@ -38,8 +38,8 @@ class ActualizarPerroActivity : AppCompatActivity() {
         val sexo: String = this.intent.getStringExtra("sexo")
         val edad: String = this.intent.getStringExtra("edad")
         val color: String = this.intent.getStringExtra("color")
-        val idRaza: Int? = this.intent.getIntExtra("idRaza", -1)
-        val idPersona: Int? = this.intent.getIntExtra("idPersona", -1)
+        val idRaza: String? = this.intent.getStringExtra("idRaza")
+        val idPersona: String? = this.intent.getStringExtra("idPersona")
         val idTienda: Int? = this.intent.getIntExtra("idTienda", -1)
 
         txt_sexo_perro_mod.hint = sexo
@@ -47,19 +47,22 @@ class ActualizarPerroActivity : AppCompatActivity() {
         txt_color_perro_mod.hint = color
         //txt_id_tienda_perro_mod.hint = idTienda
         //txt_id_raza_mod.text = id.toString()
+        txt_raza_perro_mod.hint = idRaza
+        txt_cedula_persona_mod.hint = idPersona
+        txt_id_tienda_perro_mod.hint = idTienda.toString()
 
         btn_modificar_perro.setOnClickListener {
             try {
-                val raza = listaRazas.find { raza ->
-                    raza.nombreRaza == txt_raza_perro_mod.text.toString()
+                val razaPerro = listaRazas.find { razaPerro ->
+                    razaPerro.nombreRaza == txt_raza_perro_mod.text.toString()
                 }
 
                 val persona = listaPersonas.find { persona ->
                     persona.cedula == txt_cedula_persona_mod.text.toString()
                 }
 
-                val tienda = listaTiendas.find { tienda ->
-                    tienda.id == txt_id_tienda_perro_mod.text.toString().toInt()
+                val tiendaMascotas = listaTiendas.find { tiendaMascotas ->
+                    tiendaMascotas.id == txt_id_tienda_perro_mod.text.toString().toInt()
                 }
                 val perro =
                     Perro(
@@ -67,9 +70,13 @@ class ActualizarPerroActivity : AppCompatActivity() {
                         txt_sexo_perro_mod.text.toString(),
                         txt_edad_perro_mod.text.toString(),
                         txt_color_perro_mod.text.toString(),
-                        raza!!.id,
+                        /*razaPerro!!.id,
                         persona!!.id,
-                        tienda!!.id
+                        tiendaMascotas!!.id*/
+                        PerrosXRaza(razaPerro!!.id, null),
+                        PerrosXPersona(persona!!.id, null, null, null, null),
+                        PerrosXTiendaMascotas(txt_id_tienda_perro_mod.text.toString().toInt(), null, null, null, null, null)
+
                     )
                 actualizarPerro(perro)
             }
@@ -187,9 +194,9 @@ class ActualizarPerroActivity : AppCompatActivity() {
             "sexo": "${perro.sexo}",
             "edad": "${perro.edad}",
             "color": "${perro.color}",
-            "idRaza": "${perro.idRaza}",
-            "idPersona": "${perro.idPersona}",
-            "idTienda": "${perro.idTienda}"
+            "idRaza": "${perro.idRaza!!.id}",
+            "idPersona": "${perro.idPersona!!.id}",
+            "idTienda": "${perro.idTienda!!.id}"
 
             }"""
 
@@ -201,15 +208,18 @@ class ActualizarPerroActivity : AppCompatActivity() {
                             Log.i("http", "Error: ${ex.message}")
                         }
                         is Result.Success -> {
-                            irAGestionarPerros()
-                            Toast.makeText(this, "Perro modificado", Toast.LENGTH_SHORT).show()
+                            runOnUiThread {
+                                Toast.makeText(this, "Perro modificado", Toast.LENGTH_SHORT).show()
+                                irAGestionarPerros()
+                            }
+
                         }
                     }
                 }
         }
         catch (ex: Exception) {
             Log.i("http", "Error: ${ex.message}")
-            //Toast.makeText(this, "Error:${ex}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Error al modificar perro", Toast.LENGTH_SHORT).show()
         }
 
     }

@@ -34,28 +34,28 @@ class IngresarPerroActivity : AppCompatActivity() {
         //val idRaza: Int = this.intent.getIntExtra("idRaza", -1)
         btn_registrar_perro.setOnClickListener {
             try {
-                val raza = listaRazas.find { raza ->
-                    raza.nombreRaza == txt_raza_perro_reg.text.toString()
+                val razaPerro = listaRazas.find { razaPerro ->
+                    razaPerro.nombreRaza == txt_raza_perro_reg.text.toString()
                 }
 
                 val persona = listaPersonas.find { persona ->
                     persona.cedula == txt_cedula_persona_reg.text.toString()
                 }
 
-                val tienda = listaTiendas.find { tienda ->
-                    tienda.id == txt_id_tienda_mascota_reg.text.toString().toInt()
+                val tiendaMascotas = listaTiendas.find { tiendaMascotas ->
+                    tiendaMascotas.id == txt_id_tienda_mascota_reg.text.toString().toInt()
                 }
                 val perro = Perro(
                     null,
                     txt_sexo_reg.text.toString(),
                     txt_edad_perro_reg.text.toString(),
                     txt_color_reg.text.toString(),
-                    raza!!.id,
+                    /*raza!!.id,
                     persona!!.id,
-                    tienda!!.id
-                    //RazaPerro(raza!!.id, null),
-                    //Persona(persona!!.id, null, null, null, null),
-                    //(tienda!!.id, null, null, null, null, null)
+                    tienda!!.id*/
+                    PerrosXRaza(razaPerro!!.id, null),
+                    PerrosXPersona(persona!!.id, null, null, null, null),
+                    PerrosXTiendaMascotas(txt_id_tienda_mascota_reg.text.toString().toInt(), null, null, null, null, null)
 
                 )
                 registrarPerro(perro)
@@ -168,9 +168,9 @@ class IngresarPerroActivity : AppCompatActivity() {
             "sexo" to perro.sexo,
             "edad" to perro.edad,
             "color" to perro.color,
-            "idRaza" to perro.idRaza,
-            "idPersona" to perro.idPersona,
-            "idTienda" to perro.idTienda
+            "idRaza" to perro.idRaza!!.id,
+            "idPersona" to perro.idPersona!!.id,
+            "idTienda" to perro.idTienda!!.id
         )
 
         url.httpPost(parametro).responseString { request, response, result ->
@@ -181,8 +181,10 @@ class IngresarPerroActivity : AppCompatActivity() {
                     Toast.makeText(this, "Error al registrar perro", Toast.LENGTH_SHORT).show()
                 }
                 is Result.Success -> {
-                    irAGestionarPerros()
-                    Toast.makeText(this, "Perro registrado", Toast.LENGTH_SHORT).show()
+                    runOnUiThread {
+                        Toast.makeText(this, "Perro registrado", Toast.LENGTH_SHORT).show()
+                        irAGestionarPerros()
+                    }
 
                 }
             }

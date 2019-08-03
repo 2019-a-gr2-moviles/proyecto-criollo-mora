@@ -35,11 +35,7 @@ class AdaptadorPersona(
 
             val layout = view.findViewById(R.id.linear_layout_persona) as LinearLayout
             layout.setOnClickListener {
-                /*val persona = listaPersonas.find{ persona ->
-                    idTextView.text.toString().toInt() == persona.id
-                }
-
-                contexto.irAActulizarPersona(persona)*/
+                contexto.eliminarPersona(idTextView.text.toString().toInt())
 
             }
 

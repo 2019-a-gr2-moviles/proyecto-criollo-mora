@@ -15,7 +15,7 @@ class IngresarRazaPerroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ingresar_persona)
+        setContentView(R.layout.activity_ingresar_raza_perro)
         btn_registrar_raza.setOnClickListener {
             registrarRaza()
         }
@@ -43,10 +43,11 @@ class IngresarRazaPerroActivity : AppCompatActivity() {
                     //Toast.makeText(this, "Error:${ex}", Toast.LENGTH_SHORT).show()
                 }
                 is Result.Success -> {
-                    irAGestionarRazas()
-                    Toast.makeText(this, "Raza de perro registrada", Toast.LENGTH_SHORT).show()
+                    runOnUiThread {
+                        Toast.makeText(this, "Raza de perro registrada", Toast.LENGTH_SHORT).show()
+                        irAGestionarRazas()
 
-
+                    }
                 }
             }
         }

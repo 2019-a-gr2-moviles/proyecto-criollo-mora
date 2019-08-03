@@ -2,24 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f4a1e9d-8336-4f67-bbe6-11d5b4d4c5b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/debug/res/values/google_maps_api.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/MapsActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/activity_maps.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/release/res/values/google_maps_api.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/PerrosXPersona.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/PerrosXRaza.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/PerrosXTiendaMascotas.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/Variables.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/ActualizarPerroActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/ActualizarPerroActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/ActualizarPersonaActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/ActualizarPersonaActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/ActualizarRazaPerroActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/ActualizarRazaPerroActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/ActualizarTiendaActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/ActualizarTiendaActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/ActualizarUsuarioActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/ActualizarUsuarioActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/AdaptadorPerro.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/AdaptadorPerro.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/AdaptadorPersona.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/AdaptadorPersona.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/AdaptadorRazaPerro.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/AdaptadorRazaPerro.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/AdaptadorTienda.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/AdaptadorTienda.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/AdaptadorUsuario.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/AdaptadorUsuario.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/GestionarPerroActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/GestionarPerroActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/GestionarPersonaActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/GestionarPersonaActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/GestionarRazaPerroActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/GestionarRazaPerroActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/GestionarTiendaActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/GestionarTiendaActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/GestionarUsuarioActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/GestionarUsuarioActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/IngresarPerroActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/IngresarPerroActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/IngresarPersonaActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/IngresarPersonaActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/IngresarRazaPerroActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/IngresarRazaPerroActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/IngresarTiendaActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/IngresarTiendaActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/IngresarUsuarioActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/IngresarUsuarioActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/MapsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/MapsActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/OpcionesTiendaMascotasActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/OpcionesTiendaMascotasActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/Usuario.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/Usuario.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/activity_actualizar_usuario.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/activity_actualizar_usuario.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/activity_ingresar_usuario.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/activity_ingresar_usuario.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/layout_usuario.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/layout_usuario.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/Perro.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/Perro.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/Persona.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/Persona.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/RazaPerro.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/RazaPerro.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/TiendaMascotas.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/java/com/example/proyecto/TiendaMascotas.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/activity_ingresar_perro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/activity_ingresar_perro.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/layout_tienda.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../01-android-proyecto/app/src/main/res/layout/layout_tienda.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-proyecto/api/models/Usuario.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend-proyecto/api/models/Usuario.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-proyecto/api/models/PerroPorPersona.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend-proyecto/api/models/PerroPorPersona.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-proyecto/api/models/PerroPorTienda.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend-proyecto/api/models/PerroPorTienda.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-proyecto/api/models/TiendaMascotas.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend-proyecto/api/models/TiendaMascotas.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,28 +52,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/Usuario.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-337">
-              <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/Persona.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1032">
               <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/PerroPorPersona.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -78,19 +79,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/PerroPorTienda.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/TiendaMascotas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="984">
-              <caret line="41" column="59" lean-forward="true" selection-start-line="41" selection-start-column="59" selection-end-line="41" selection-end-column="59" />
+            <state relative-caret-position="119">
+              <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -103,13 +95,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/backend-proyecto/api/models/PerroPorPersona.js" />
-        <option value="$PROJECT_DIR$/backend-proyecto/api/models/PerroPorTienda.js" />
         <option value="$PROJECT_DIR$/backend-proyecto/api/models/Perro.js" />
         <option value="$PROJECT_DIR$/backend-proyecto/api/models/Persona.js" />
-        <option value="$PROJECT_DIR$/backend-proyecto/api/models/TiendaMascotas.js" />
         <option value="$PROJECT_DIR$/backend-proyecto/api/models/RazaPerro.js" />
         <option value="$PROJECT_DIR$/backend-proyecto/api/models/Usuario.js" />
+        <option value="$PROJECT_DIR$/backend-proyecto/api/models/PerroPorTienda.js" />
+        <option value="$PROJECT_DIR$/backend-proyecto/api/models/PerroPorPersona.js" />
+        <option value="$PROJECT_DIR$/backend-proyecto/api/models/TiendaMascotas.js" />
       </list>
     </option>
   </component>
@@ -132,7 +124,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -162,13 +153,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../web/web2" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -204,11 +196,13 @@
       <workItem from="1564281536393" duration="1801000" />
       <workItem from="1564341640028" duration="7003000" />
       <workItem from="1564443087519" duration="2684000" />
+      <workItem from="1564462136342" duration="4482000" />
+      <workItem from="1564539592931" duration="328000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25913000" />
+    <option name="totallyTimeSpent" value="30723000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -238,8 +232,22 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/Usuario.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-337">
+        <state relative-caret-position="240">
           <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/PerroPorTienda.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/PerroPorPersona.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -266,22 +274,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/TiendaMascotas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="984">
-          <caret line="41" column="59" lean-forward="true" selection-start-line="41" selection-start-column="59" selection-end-line="41" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/PerroPorPersona.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend-proyecto/api/models/PerroPorTienda.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="119">
+          <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
         </state>
       </provider>
     </entry>

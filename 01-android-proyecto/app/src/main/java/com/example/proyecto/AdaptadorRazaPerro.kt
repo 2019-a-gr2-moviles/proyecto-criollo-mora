@@ -22,18 +22,14 @@ class AdaptadorRazaPerro (
         var modificarButton: Button
 
         init {
-            nombreRazaTextView = view.findViewById(R.id.txt_nombre_persona_ly) as TextView
-            idTextView = view.findViewById(R.id.txt_id_persona_ly) as TextView
-            eliminarButton = view.findViewById(R.id.btn_eliminar_persona) as Button
-            modificarButton = view.findViewById(R.id.btn_modificar_persona) as Button
+            nombreRazaTextView = view.findViewById(R.id.txt_nombre_raza_ly) as TextView
+            idTextView = view.findViewById(R.id.txt_id_raza_ly) as TextView
+            eliminarButton = view.findViewById(R.id.btn_eliminar_raza) as Button
+            modificarButton = view.findViewById(R.id.btn_modificar_raza) as Button
 
-            val layout = view.findViewById(R.id.linear_layout_persona) as LinearLayout
+            val layout = view.findViewById(R.id.linear_layout_raza) as LinearLayout
             layout.setOnClickListener {
-                /*val persona = listaPersonas.find{ persona ->
-                    idTextView.text.toString().toInt() == persona.id
-                }
-
-                contexto.irAActulizarPersona(persona)*/
+                contexto.eliminarRaza(idTextView.text.toString().toInt())
 
             }
 
@@ -45,8 +41,7 @@ class AdaptadorRazaPerro (
             modificarButton.setOnClickListener {
                 val razaPerro = RazaPerro(
                     idTextView.text.toString().toInt(),
-                    nombreRazaTextView.text.toString(),
-                    null
+                    nombreRazaTextView.text.toString()
 
                 )
                 contexto.irAActulizarRaza(razaPerro)

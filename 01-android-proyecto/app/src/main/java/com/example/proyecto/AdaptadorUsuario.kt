@@ -29,12 +29,7 @@ class AdaptadorUsuario (
 
             val layout = view.findViewById(R.id.linear_layout_usuario) as LinearLayout
             layout.setOnClickListener {
-                /*val usuario = crearUsuario(
-                    idTextView.text.toString().toInt(),
-                    usernameTextView.text.toString(),
-                    tipoTextView.text.toString()
-                )
-                contexto.irAActulizarUsuario(usuario)*/
+                contexto.eliminarUsuario(idTextView.text.toString().toInt())
 
             }
 

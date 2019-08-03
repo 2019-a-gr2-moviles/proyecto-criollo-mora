@@ -20,8 +20,9 @@ class GestionarPersonaActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gestionar_persona)
         getPersonas()
+        setContentView(R.layout.activity_gestionar_persona)
+
 
     }
 
@@ -66,21 +67,26 @@ class GestionarPersonaActivity : AppCompatActivity() {
     }
 
     fun eliminarPersona(idPersona: Int) {
-        val url = url+"/?id=${idPersona}"
+        //val url = url+"?id=${idPersona}"
+        val url = url+"/${idPersona}"
         Log.i("eliminar", "url: ${url}")
+        getPersonas()
 
         url.httpDelete()
             .responseString { request, response, result ->
                 when (result) {
+
                     is Result.Failure -> {
                         val ex = result.getException()
-                        //Toast.makeText(this, "Error:${ex}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Error al eliminar persona", Toast.LENGTH_SHORT).show()
                         Log.i("http", "Error: ${ex.message}")
                     }
                     is Result.Success -> {
-                        irAGestionarPersonas()
-                        Toast.makeText(this, "Persona eliminada", Toast.LENGTH_SHORT).show()
-
+                        runOnUiThread {
+                            getPersonas()
+                            Toast.makeText(this, "Persona eliminada", Toast.LENGTH_SHORT).show()
+                            startActivity(this.intent)
+                        }
 
                     }
                 }

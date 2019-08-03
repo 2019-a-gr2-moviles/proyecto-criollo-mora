@@ -45,10 +45,10 @@ class IngresarPersonaActivity : AppCompatActivity() {
                     Toast.makeText(this, "Error al registrar persona", Toast.LENGTH_SHORT).show()
                 }
                 is Result.Success -> {
-                    irAGestionarPersonas()
-                    Toast.makeText(this, "Persona registrada", Toast.LENGTH_SHORT).show()
-
-
+                    runOnUiThread {
+                        Toast.makeText(this, "Persona registrada", Toast.LENGTH_SHORT).show()
+                        irAGestionarPersonas()
+                    }
                 }
             }
         }
